@@ -670,6 +670,9 @@ class PackageHandler(object):
         self.start_activity()
         self.target.execute('am kill-all')  # kill all *background* activities
         self.target.clear_logcat()
+        time.sleep(10)
+        self.target.execute('input keyevent KEYCODE_ENTER')
+        self.target.execute('input keyevent KEYCODE_DPAD_CENTER')
 
     def resolve_package(self, context):
         if not self.owner.package_names and not self.package_name:
