@@ -43,6 +43,7 @@ class Jankbench(ApkWorkload):
 
     """
     package_names = ['com.android.benchmark']
+    supported_versions = ['1.0', '28']
     activity = '.app.RunLocalBenchmarksActivity'
 
     results_db_file = 'BenchmarkResults'
